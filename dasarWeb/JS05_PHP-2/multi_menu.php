@@ -33,10 +33,10 @@ $menu = [
     ]
 ];
 function tampilkanMenuBertingkat(array $menu) {
-    echo "<ul>"; // gunakan <ul> untuk bullet list
+    echo "<ul>"; 
     foreach ($menu as $item) {
         echo "<li>{$item['nama']}";
-        // Cek apakah ada subMenus, jika ada panggil fungsi ini lagi
+    
         if (isset($item['subMenus'])) {
             tampilkanMenuBertingkat($item['subMenus']);
         }

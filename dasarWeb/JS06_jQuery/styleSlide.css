@@ -1,16 +1,12 @@
-.kotak {
-  width: 80px;
-  height: 80px;
+#kotak2,
+#flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #a7dbd8;
+  border: solid 2px #e0e4cc;
+  border-radius: 5px;
 }
 
-#div1 {
-  background-color: red;
-}
-
-#div2 {
-  background-color: green;
-}
-
-#div3 {
-  background-color: blue;
+#kotak2 {
+  padding: 50px;
 }

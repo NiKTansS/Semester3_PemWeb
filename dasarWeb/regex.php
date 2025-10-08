@@ -19,17 +19,19 @@ if (preg_match($pattern, $text, $matches)) {
 
 $pattern = '/apple/';
 $replacement = 'banana';
-$text = '<br>I like apple pie.';
+$text = '<br>I like apple pie.<br>';
 
 $new_text = preg_replace($pattern, $replacement, $text);
 echo $new_text; // Output: "I like banana pie."
 
-$pattern = '/go*d/'; // Cocokkan "god", "good", "goood", dll.
-$text = 'god is good.';
+$pattern = '/go?d/'; // "o" boleh muncul 0 atau 1 kali.
+$tests = ['gd', 'god', 'good'];
 
-if (preg_match($pattern, $text, $matches)) {
-  echo "<br>Cocokkan: " . $matches[0];
-} else {
-  echo "<br>Tidak ada yang cocok!";
+foreach ($tests as $text) {
+  if (preg_match($pattern, $text, $matches)) {
+    echo $text . "==> Cocokkan: " . $matches[0] . "<br>";
+  } else {
+    echo $text . "==> Tidak ada yang cocok!<br>";
+  }
 }
 ?>

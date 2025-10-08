@@ -37,14 +37,12 @@ $(document).ready(function() {
         } else {
             $("#nama-error").text("");
         }
-
         if (email === "") {
             $("#email-error").text("Email harus diisi.");
             valid = false;
         } else {
             $("#email-error").text("");
         }
-
         if (valid) {
             $.ajax({
                 url: "proses_validasi.php",

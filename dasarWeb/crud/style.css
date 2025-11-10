@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+.container {
+    max-width: 800px; /* Lebar maksimum kontainer */
+    margin: 20px auto; /* Margin atas-bawah 20px, kiri-kanan auto (tengah) */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Efek bayangan */
+}
+h2 {
+    text-align: center; /* Judul rata tengah */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 12px; /* Padding lebih besar */
+    text-align: left;
+}
+th {
+    background-color: #4CAF50; /* Warna hijau untuk header tabel */
+    color: white;
+}
+tr:nth-child(even) { /* Efek belang-belang pada baris genap */
+    background-color: #f9f9f9;
+}
+.btn-tambah {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 20px; /* Margin diubah ke atas */
+    margin-bottom: 20px; /* Tambah margin bawah */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.btn-tambah:hover {
+    background-color: #45a049;
+}
+form {
+    margin-top: 20px;
+}
+label {
+    display: block; /* Label tampil sebagai blok */
+    margin-bottom: 5px; /* Jarak bawah label */
+    font-weight: bold;
+}
+input[type="text"], select, textarea { /* Style untuk input teks, select, textarea */
+    width: calc(100% - 22px); /* Lebar penuh dikurangi padding dan border */
+    padding: 10px;
+    margin-bottom: 15px; /* Jarak bawah input */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Padding dan border termasuk dalam lebar */
+}
+textarea {
+    height: 100px; /* Tinggi spesifik untuk textarea */
+}
+.radio-group label {
+    display: inline; /* Label radio inline */
+    margin-right: 10px;
+    font-weight: normal; /* Font weight normal untuk label radio */
+}
+input[type="radio"] {
+    margin-right: 5px;
+}
+button[type="submit"], .btn-kembali {
+    display: inline-block; /* Agar tombol bisa berdampingan */
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; /* Jarak antar tombol */
+}
+button[type="submit"]:hover, .btn-kembali:hover {
+    background-color: #45a049;
+}
+.btn-kembali {
+    background-color: #f44336; /* Warna merah untuk tombol kembali */
+}
+.btn-kembali:hover {
+    background-color: #da190b;
+}
+/* Style tambahan untuk link aksi di tabel */
+td a {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 5px; /* Jarak antar link Edit dan Hapus */
+}
+td a:hover {
+    text-decoration: underline;
+}

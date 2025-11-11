@@ -1,25 +1,30 @@
 <?php
 
-//Encapsulation
-class Car
+//Interface
+interface Shape
 {
-    private $model;
+    public function calculateArea();
+}
+
+interface Color
+{
+    public function getColor();
+}
+
+class Circle implements Shape, Color
+{
+    private $radius;
     private $color;
     
-    public function __construct($model, $color)
+    public function __construct($radius, $color)
     {
-        $this->model = $model;
+        $this->radius = $radius;
         $this->color = $color;
     }
     
-    public function getModel()
+    public function calculateArea()
     {
-        return $this->model;
-    }
-    
-    public function setColor($color)
-    {
-        $this->color = $color;
+        return pi() * pow($this->radius, 2);
     }
     
     public function getColor()
@@ -28,57 +33,72 @@ class Car
     }
 }
 
-$car = new Car("Toyota", "Blue");
+$circle = new Circle(5, "Blue");
 
-echo "Model: " . $car->getModel() . "<br>";
-echo "Color: " . $car->getColor() . "<br>";
-
-$car->setColor("Red");
-
-echo "Updated Color: " . $car->getColor() . "<br>";
+echo "Area of Circle: " . $circle->calculateArea() . ".<br>";
+echo "Color of Circle: " . $circle->getColor() . ".<br>";
 
 
-//Abstraction
-abstract class Shape
+//Constructors dan destructors
+class Car
 {
-    abstract public function calculateArea();
-}
-
-class Circle extends Shape
-{
-    private $radius;
+    private $brand;
     
-    public function __construct($radius)
+    public function __construct($brand)
     {
-        $this->radius = $radius;
+        echo "A new car is created.<br>";
+        $this->brand = $brand;
     }
     
-    public function calculateArea()
+    public function getBrand()
     {
-        return pi() * pow($this->radius, 2);
+        return $this->brand;
+    }
+    
+    public function __destruct()
+    {
+        echo "The car is destroyed.<br>";
     }
 }
 
-class Rectangle extends Shape
+$car = new Car("Toyota");
+
+echo "Brand: " . $car->getBrand() . ".<br>";
+
+
+//Encapsulation and Access Modifiers
+class Animal
 {
-    private $width;
-    private $height;
+    public $name;
+    protected $age;
+    private $color;
     
-    public function __construct($width, $height)
+    public function __construct($name, $age, $color)
     {
-        $this->width = $width;
-        $this->height = $height;
+        $this->name = $name;
+        $this->age = $age;
+        $this->color = $color;
     }
     
-    public function calculateArea()
+    public function getName()
     {
-        return $this->width * $this->height;
+        return $this->name;
+    }
+    
+    protected function getAge()
+    {
+        return $this->age;
+    }
+    
+    private function getColor()
+    {
+        return $this->color;
     }
 }
 
-$circle = new Circle(5);
-$rectangle = new Rectangle(4, 6);
+$animal = new Animal("Dog", 3, "Brown");
 
-echo "Area of Circle: " . $circle->calculateArea() . "<br>";
-echo "Area of Rectangle: " . $rectangle->calculateArea() . "<br>";
+echo "Name: " . $animal->name . ".<br>";
+echo "Age: " . $animal->getAge() . ".<br>";
+echo "Color: " . $animal->getColor() . ".<br>";
 ?>
